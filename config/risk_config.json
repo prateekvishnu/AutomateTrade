@@ -1,0 +1,35 @@
+{
+  "position_limits": {
+    "max_single_position": 0.05,
+    "max_sector_exposure": 0.25,
+    "max_market_cap_exposure": 0.40,
+    "min_diversification": 10
+  },
+  "stop_loss": {
+    "default_percentage": 0.03,
+    "trailing_percentage": 0.02,
+    "time_based_days": 7,
+    "max_loss_per_day": 0.02,
+    "max_loss_per_week": 0.05
+  },
+  "volatility_limits": {
+    "max_stock_volatility": 0.40,
+    "max_portfolio_volatility": 0.25,
+    "volatility_lookback_days": 30
+  },
+  "correlation_limits": {
+    "max_correlation": 0.70,
+    "correlation_lookback_days": 90
+  },
+  "liquidity_requirements": {
+    "min_volume": 1000000,
+    "min_market_cap": 100000000,
+    "max_bid_ask_spread": 0.02
+  },
+  "emergency_stops": {
+    "max_daily_loss": 0.03,
+    "max_weekly_loss": 0.08,
+    "max_monthly_loss": 0.15,
+    "emergency_stop_trigger": 0.05
+  }
+}

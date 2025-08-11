@@ -1,0 +1,36 @@
+{
+  "api": {
+    "base_url": "https://api.schwab.com",
+    "timeout": 30,
+    "retry_attempts": 3,
+    "retry_delay": 5
+  },
+  "authentication": {
+    "use_2fa": true,
+    "session_timeout": 3600,
+    "auto_refresh": true
+  },
+  "trading": {
+    "default_order_type": "limit",
+    "default_time_in_force": "day",
+    "max_order_size": 10000,
+    "min_order_size": 100,
+    "price_precision": 2
+  },
+  "streaming": {
+    "enable_real_time": true,
+    "heartbeat_interval": 30,
+    "reconnect_attempts": 5,
+    "max_reconnect_delay": 60
+  },
+  "account": {
+    "check_balance_before_trade": true,
+    "validate_margin": true,
+    "check_trading_hours": true
+  },
+  "paper_trading": {
+    "enabled": true,
+    "simulate_delays": true,
+    "simulate_slippage": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "trading": {
+    "max_position_size": 0.05,
+    "max_sector_exposure": 0.25,
+    "stop_loss_percentage": 0.03,
+    "trailing_stop_percentage": 0.02,
+    "max_holding_days": 7,
+    "min_profit_target": 0.05,
+    "max_daily_trades": 10,
+    "paper_trading": true
+  },
+  "risk": {
+    "conservative": {
+      "large_cap": 0.70,
+      "mid_cap": 0.20,
+      "small_cap": 0.10,
+      "max_volatility": 0.15
+    },
+    "moderate": {
+      "large_cap": 0.50,
+      "mid_cap": 0.30,
+      "small_cap": 0.20,
+      "max_volatility": 0.25
+    },
+    "aggressive": {
+      "large_cap": 0.30,
+      "mid_cap": 0.40,
+      "small_cap": 0.30,
+      "max_volatility": 0.35
+    }
+  },
+  "market_caps": {
+    "large_cap": {
+      "min_market_cap": 10000000000,
+      "max_market_cap": 999999999999,
+      "description": "Stable, dividend-paying companies"
+    },
+    "mid_cap": {
+      "min_market_cap": 2000000000,
+      "max_market_cap": 9999999999,
+      "description": "Growth potential with moderate risk"
+    },
+    "small_cap": {
+      "min_market_cap": 300000000,
+      "max_market_cap": 1999999999,
+      "description": "High growth, higher risk"
+    },
+    "micro_cap": {
+      "min_market_cap": 50000000,
+      "max_market_cap": 299999999,
+      "description": "Speculative, highest risk"
+    }
+  },
+  "weekly_planning": {
+    "sunday_analysis": true,
+    "monday_execution": true,
+    "midweek_monitoring": true,
+    "friday_review": true,
+    "weekend_research": true
+  },
+  "sectors": {
+    "technology": 0.25,
+    "healthcare": 0.20,
+    "financial": 0.20,
+    "consumer": 0.15,
+    "industrial": 0.10,
+    "energy": 0.05,
+    "materials": 0.05
+  }
+}
