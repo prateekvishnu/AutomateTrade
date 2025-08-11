@@ -1,0 +1,95 @@
+{
+  "templates": {
+    "initial_portfolio": {
+      "name": "Initial Portfolio Creation",
+      "description": "Prompt for creating a new portfolio with micro-cap stocks",
+      "template": "You are a professional-grade portfolio strategist. I have exactly ${capital} and I want you to build the strongest possible stock portfolio using only full-share positions in U.S.-listed micro-cap stocks (market cap under ${max_market_cap}M). Your objective is to generate maximum return from today ({start_date}) to {end_date}. This is your timeframe, you may not make any decisions after the end date. Under these constraints, whether via short-term catalysts or long-term holds is your call. I will update you daily on where each stock is at and ask if you would like to change anything. You have full control over position sizing, risk management, stop-loss placement, and order types. You may concentrate or diversify at will. Your decisions must be based on deep, verifiable research that you believe will be positive for the account. Remember your only goal is alpha. Now, use deep research and create your portfolio.",
+      "variables": ["capital", "max_market_cap", "start_date", "end_date"],
+      "usage": "Use when starting a new portfolio or switching to a new AI analyst"
+    },
+    "weekly_deep_research": {
+      "name": "Weekly Deep Research",
+      "description": "Standard weekly portfolio analysis with deep research requirement",
+      "template": "You are a professional grade portfolio analyst. Use deep research to reevaluate your portfolio. You can check current holdings and/or find new stocks. Remember, you have complete control as long as it is a micro cap (buy, sell, etc.). You can buy anything as long as you have the capital available (right now you have ${cash_amount} in cash). Here was the thesis for the current portfolio: {last_thesis}. Remember your only goal is alpha. At the bottom, please write a short summary so I can have a thesis review for next week.",
+      "variables": ["cash_amount", "last_thesis"],
+      "usage": "Use for weekly portfolio analysis and strategy planning"
+    },
+    "portfolio_update": {
+      "name": "Portfolio Update",
+      "description": "Daily portfolio status update and change decision prompt",
+      "template": "You are a professional grade portfolio analyst. You have a portfolio (it is currently week {week_number} day {day_number}), and this is your current portfolio: {portfolio_dict}, with ${cash_amount} in cash. Currently, this is your return {above_below} over the market: {returns}. The last A.I. analyst had this thesis for current holdings: {last_thesis}.\n\nWhat changes, if any, would you like to make to your portfolio today?",
+      "variables": ["week_number", "day_number", "portfolio_dict", "cash_amount", "above_below", "returns", "last_thesis"],
+      "usage": "Use for daily portfolio updates and when switching AI analysts"
+    },
+    "daily_review": {
+      "name": "Daily Portfolio Review",
+      "description": "Intraday portfolio analysis and trading decision prompt",
+      "template": "You are a professional portfolio analyst. Today is {date} and the market is currently {market_condition}. Your portfolio currently holds: {portfolio}. You have ${cash_amount} available for trading.\n\nBased on today's market conditions, should you:\n1. Hold current positions\n2. Add new positions\n3. Exit any positions\n4. Adjust stop losses\n\nProvide your reasoning and specific actions if any changes are recommended.",
+      "variables": ["date", "market_condition", "portfolio", "cash_amount"],
+      "usage": "Use for daily portfolio reviews and intraday trading decisions"
+    },
+    "risk_management": {
+      "name": "Risk Management Analysis",
+      "description": "Portfolio risk assessment and stop loss optimization",
+      "template": "As a portfolio risk manager, review the current positions and their stop loss levels:\n\n{portfolio_with_stops}\n\nCurrent market conditions: {market_conditions}\nPortfolio volatility: {volatility_level}\n\nRecommend:\n1. Stop loss adjustments for existing positions\n2. New stop loss levels for positions without them\n3. Trailing stop loss implementation\n4. Time-based exit strategies",
+      "variables": ["portfolio_with_stops", "market_conditions", "volatility_level"],
+      "usage": "Use for risk management analysis and stop loss optimization"
+    },
+    "new_stock_research": {
+      "name": "New Stock Research",
+      "description": "Research and identify new micro-cap stock opportunities",
+      "template": "You are a micro-cap stock research analyst. Research and identify the top {num_stocks} micro-cap stocks (market cap under ${max_market_cap}M) that show the highest potential for alpha generation in the next {timeframe} days.\n\nConsider:\n- Technical indicators\n- Fundamental analysis\n- Recent news and catalysts\n- Volume and price action\n- Sector trends\n\nFor each stock, provide:\n1. Ticker symbol\n2. Current price\n3. Market cap\n4. Key catalysts\n5. Risk factors\n6. Entry price recommendation\n7. Stop loss level",
+      "variables": ["num_stocks", "max_market_cap", "timeframe"],
+      "usage": "Use for discovering new stock opportunities and research"
+    },
+    "week2_analysis": {
+      "name": "Week 2 Analysis",
+      "description": "Simple week 2 portfolio revaluation prompt",
+      "template": "Reevaluate your portfolio. Research the current market and decide if you would like to add or drop any stocks or readjust. Remember you have complete control over your portfolio. Just remember you can only trade micro-caps.",
+      "variables": [],
+      "usage": "Use for week 2 portfolio analysis"
+    },
+    "week3_analysis": {
+      "name": "Week 3 Analysis",
+      "description": "Simple week 3 portfolio revaluation prompt",
+      "template": "Reevaluate current portfolio and decide if you would like to make any changes.",
+      "variables": [],
+      "usage": "Use for week 3 portfolio analysis"
+    },
+    "week4_analysis": {
+      "name": "Week 4 Analysis",
+      "description": "Week 4 portfolio review with weekend research check",
+      "template": "Alright, do you wanna use it today?",
+      "variables": [],
+      "usage": "Use for week 4 portfolio analysis and weekend research availability"
+    },
+    "week5_deep_research": {
+      "name": "Week 5+ Deep Research",
+      "description": "Deep research prompt for week 5 and beyond",
+      "template": "Use deep research to reevaluate your portfolio. You can look for new tickers and check existing ones. You have complete control as long as it is a micro cap. You can buy sell anything as long as you have the capital available (right now you have {cash_amount} in cash). Remember your only goal is alpha.",
+      "variables": ["cash_amount"],
+      "usage": "Use for week 5 and beyond portfolio analysis with deep research"
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "created": "2024-12-19",
+    "description": "AI Trading Prompt Templates for Micro-Cap Stock Trading",
+    "author": "Automated Trading Platform Team",
+    "usage_notes": [
+      "Replace placeholder variables with actual portfolio and market data",
+      "Customize prompts based on specific trading strategies",
+      "Maintain consistency in prompt structure for comparable analyses",
+      "Always include risk management considerations",
+      "Track prompt effectiveness and adjust based on results"
+    ]
+  },
+  "default_values": {
+    "capital": 100.0,
+    "max_market_cap": 300,
+    "num_stocks": 5,
+    "timeframe": 90,
+    "market_condition": "normal",
+    "volatility_level": "medium"
+  }
+}
